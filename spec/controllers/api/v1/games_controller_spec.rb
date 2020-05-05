@@ -69,6 +69,7 @@ RSpec.describe Api::V1::GamesController, type: :controller do
       expect(returned_json["game"]["start_date"]).to eq game1.start_date
       expect(returned_json["game"]["time_played"]).to eq game1.time_played
       expect(returned_json["game"]["progress"]).to eq game1.progress
+      expect(returned_json["game"]["user_id"]).to eq game1.user_id
     end
   end
 

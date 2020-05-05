@@ -6,15 +6,25 @@ const GamesIndexTile = (props) => {
 
   return (
     <div className="grid-container game-tiles text-center">
-      <h1>{props.game.title}</h1>
       <Link to={`/games/${gameID}`}>
-        <img src={props.game.image} alt={props.game.title} />
+        <h1>{props.game.title}</h1>
       </Link>
-      <p>Started Playing: {props.game.start_date}</p>
-      <p>Time Played: {props.game.time_played}</p>
-      <p>Progress: {props.game.progress}</p>
+      <select>
+        <option value="0">Unplayed</option>
+        <option value="1">Began playing</option>
+        <option value="2">Good progress</option>
+        <option value="3">Strong progress</option>
+        <option value="4">Beat</option>
+      </select>
     </div>
   )
 }
 
 export default GamesIndexTile
+
+
+// <Link to={`/games/${gameID}`}>
+// <img src={props.game.image} alt={props.game.title} />
+// </Link>
+// <p>Started Playing: {props.game.start_date}</p>
+// <p>Time Played: {props.game.time_played}</p>
