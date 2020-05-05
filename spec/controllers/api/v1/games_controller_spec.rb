@@ -49,6 +49,27 @@ RSpec.describe Api::V1::GamesController, type: :controller do
       expect(returned_json["games"][2]["time_played"]).to eq game3.time_played
       expect(returned_json["games"][2]["progress"]).to eq game3.progress
     end
-
   end
+
+  describe "GET#show" do
+    it "returns a successful response status and a content type of JSON" do
+      get :show, params: {id: game1.id}
+
+      expect(response.status).to eq 200
+      expect(response.content_type).to eq ("application/json")
+    end
+
+    it "returns the specific game" do
+      get :show, params: {id: game1.id}
+      returned_json = JSON.parse(response.body)
+
+      expect(returned_json["game"].length).to eq 7
+      expect(returned_json["game"]["title"]).to eq game1.title
+      expect(returned_json["game"]["image"]).to eq game1.image
+      expect(returned_json["game"]["start_date"]).to eq game1.start_date
+      expect(returned_json["game"]["time_played"]).to eq game1.time_played
+      expect(returned_json["game"]["progress"]).to eq game1.progress
+    end
+  end
+
 end
