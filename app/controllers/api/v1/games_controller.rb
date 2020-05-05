@@ -5,4 +5,10 @@ class Api::V1::GamesController < ApplicationController
       currentUser: current_user
     }
   end
+
+  def show
+    render json: {
+      game: Game.find(params["id"])
+    }
+  end
 end
