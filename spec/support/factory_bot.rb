@@ -7,4 +7,12 @@ FactoryBot.define do
     password_confirmation { 'password' }
   end
 
+  factory :game do
+    sequence(:title) {|n| "title#{n}"}
+    sequence(:image) {|n| "image#{n}"}
+    sequence(:start_date) {|n| "start_date#{n}"}
+    sequence(:time_played) {|n| "time_played#{n}"}
+    sequence(:progress) {|n| "progress#{n}"}
+    association :user
+  end
 end
