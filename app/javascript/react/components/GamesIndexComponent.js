@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 import GamesIndexTile from "./GamesIndexTile"
-// game.user_id === currentUser.id
+
 const GamesIndexComponent = (props) => {
   let [games, setGames] = useState([])
   let [currentUser, setCurrentUser] = useState({})
 
   useEffect(() => {
-    fetch("api/v1/games.json")
+    fetch('api/v1/games')
     .then((response) => {
       if (response.ok) {
         return response
