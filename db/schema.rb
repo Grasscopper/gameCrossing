@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_05_170241) do
+ActiveRecord::Schema.define(version: 2020_05_05_222205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2020_05_05_170241) do
     t.string "progress"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "image"
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_lists_on_game_id"
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "list_id"
+    t.index ["list_id"], name: "index_points_on_list_id"
   end
 
   create_table "users", force: :cascade do |t|
