@@ -1,4 +1,4 @@
 class PointSerializer < ActiveModel::Serializer
-  attributes :title
+  attributes :id, :title
   belongs_to :list
 end
