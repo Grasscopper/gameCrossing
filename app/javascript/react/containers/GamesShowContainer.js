@@ -37,7 +37,6 @@ const GamesShowContainer = (props) => {
     })
   }, [])
 
-  let emptyList = "Empty"
   let listTiles = lists.map((list) => {
     return (
       <ListsIndexTile
