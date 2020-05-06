@@ -10,6 +10,26 @@ bf2 = Game.create(
   user: grasscopper
 )
 
+bf2List1 = List.create(
+  title: "Unlock Darth Maul skin",
+  game: bf2
+)
+
+bf2Point1 = Point.create(
+  title: "Get 5000 eliminations as Darth Maul",
+  list: bf2List1
+)
+
+bf2Point2 = Point.create(
+  title: "Practice offline as Darth Maul",
+  list: bf2List1
+)
+
+bf2Point3 = Point.create(
+  title: "Play Co - Op",
+  list: bf2List1
+)
+
 ultimate = Game.create(
   title: "Super Smash Bros. Ultimate",
   image: "https://www.smashbros.com/assets_v2/img/top/hero05_en.jpg",

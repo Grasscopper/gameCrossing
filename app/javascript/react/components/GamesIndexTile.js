@@ -21,10 +21,3 @@ const GamesIndexTile = (props) => {
 }
 
 export default GamesIndexTile
-
-
-// <Link to={`/games/${gameID}`}>
-// <img src={props.game.image} alt={props.game.title} />
-// </Link>
-// <p>Started Playing: {props.game.start_date}</p>
-// <p>Time Played: {props.game.time_played}</p>

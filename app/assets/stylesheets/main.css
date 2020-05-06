@@ -1,3 +1,7 @@
 .game-tiles {
   border: solid;
 }
+
+.underline {
+  text-decoration: underline;
+}

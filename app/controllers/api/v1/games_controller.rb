@@ -7,8 +7,13 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def show
+    game = Game.find(params["id"])
     render json: {
-      game: Game.find(params["id"])
+      game: serialized_data(game, GameSerializer)
     }
+  end
+
+  def serialized_data(data, serializer)
+   ActiveModelSerializers::SerializableResource.new(data, serializer: serializer)
   end
 end
