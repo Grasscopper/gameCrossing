@@ -1,5 +1,58 @@
+body {
+  background-color: #b4f2e1;
+}
+
+img {
+  border: solid;
+  border-radius: 15px;
+}
+
+a {
+  color: #fa9191;
+}
+
+a:hover {
+  color: #eb6383;
+  font-weight: bold;
+}
+
+.grid-container {
+  margin-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.website-title {
+  background-color: purple;
+  color: purple'
+}
+
+.game-title {
+  color: #fa9191;
+}
+
+.game-title:hover {
+  color: #eb6383;
+  font-weight: bold;
+}
+
+li {
+  background-color: #ffe9c5;
+}
+
 .game-tiles {
   border: solid;
+  background-color: #ffe9c5;
+}
+
+.top-bar {
+  background-color: #ffe9c5;
+}
+
+p {
+  color: #00263b;
+  font-family: VT323;
+  font-size: 24px;
 }
 
 .underline {

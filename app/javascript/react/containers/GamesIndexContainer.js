@@ -4,7 +4,10 @@ import GamesIndexTile from "../components/GamesIndexTile"
 
 const GamesIndexContainer = (props) => {
   let [games, setGames] = useState([])
-  let [currentUser, setCurrentUser] = useState({})
+  let [currentUser, setCurrentUser] = useState({
+    user_name: "",
+    email: ""
+  })
 
   useEffect(() => {
     fetch('api/v1/games')
@@ -42,8 +45,14 @@ const GamesIndexContainer = (props) => {
     }
   })
 
+  let currentUserHeader = <h1 className="text-center">{currentUser.user_name}'s Collection</h1>
+  if (currentUser.user_name === "") {
+    currentUserHeader = <div className="grid-container text-center"><div className="game-tiles"><h1>Welcome to Game Crossing!</h1></div><h1><a href="/users/sign_up">Sign up to start your video game collection</a></h1><h1><a href="/users/sign_in">Log in</a></h1></div>
+  }
+
   return (
     <div>
+      {currentUserHeader}
       {gameTiles}
     </div>
   )

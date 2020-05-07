@@ -1,5 +1,5 @@
-grasscopper = User.create(email: "zelda@princess.com", password: "mouthwash")
-flimflam = User.create(email: "this@isntreal.com", password: "2complex4u")
+grasscopper = User.create(user_name: "Grasscopper", email: "zelda@princess.com", password: "mouthwash")
+flimflam = User.create(user_name: "Flimflam", email: "this@isntreal.com", password: "2complex4u")
 
 bf2 = Game.create(
   title: "Star Wars Battlefront II",
@@ -12,6 +12,7 @@ bf2 = Game.create(
 
 bf2List1 = List.create(
   title: "Unlock Darth Maul skin",
+  image: "https://twinfinite.net/wp-content/uploads/2020/04/battlefront-2-old-master-darth-maul-skin.jpg",
   game: bf2
 )
 
