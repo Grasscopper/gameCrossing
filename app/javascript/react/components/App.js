@@ -1,18 +1,18 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import GamesIndexComponent from "./GamesIndexComponent"
+import GamesIndexContainer from "../containers/GamesIndexContainer"
 import GamesShowContainer from "../containers/GamesShowContainer"
-import ListsShowComponent from "./ListsShowComponent"
+import ListsShowContainer from "../containers/ListsShowContainer"
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={GamesIndexComponent} />
-        <Route exact path="/games" component={GamesIndexComponent} />
+        <Route exact path="/" component={GamesIndexContainer} />
+        <Route exact path="/games" component={GamesIndexContainer} />
         <Route exact path="/games/:id" component={GamesShowContainer} />
-        <Route exact path="/lists/:id" component={ListsShowComponent} />
+        <Route exact path="/lists/:id" component={ListsShowContainer} />
       </Switch>
     </BrowserRouter>
   )
