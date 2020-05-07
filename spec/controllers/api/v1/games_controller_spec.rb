@@ -63,13 +63,13 @@ RSpec.describe Api::V1::GamesController, type: :controller do
       get :show, params: {id: game1.id}
       returned_json = JSON.parse(response.body)
 
-      expect(returned_json["game"].length).to eq 7
+      expect(returned_json["game"].length).to eq 8
       expect(returned_json["game"]["title"]).to eq game1.title
       expect(returned_json["game"]["image"]).to eq game1.image
       expect(returned_json["game"]["start_date"]).to eq game1.start_date
       expect(returned_json["game"]["time_played"]).to eq game1.time_played
       expect(returned_json["game"]["progress"]).to eq game1.progress
-      expect(returned_json["game"]["user_id"]).to eq game1.user_id
+      expect(returned_json["game"]["user"]["id"]).to eq game1.user_id
     end
   end
 
