@@ -7,7 +7,7 @@ const GamesIndexTile = (props) => {
   return (
     <div className="grid-container game-tiles text-center">
       <Link to={`/games/${gameID}`}>
-        <h1>{props.game.title}</h1>
+        <h1 className="game-title">{props.game.title}</h1>
       </Link>
       <select>
         <option value="0">Unplayed</option>

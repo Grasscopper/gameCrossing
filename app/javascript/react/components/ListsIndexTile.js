@@ -6,7 +6,7 @@ const ListsIndexTile = (props) => {
 
   return (
     <Link to={`/lists/${listID}`}>
-      <h3>{props.list.title}</h3>
+      <h3 className="game-title">{props.list.title}</h3>
     </Link>
   )
 }

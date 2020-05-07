@@ -42,7 +42,7 @@ const ListsShowContainer = (props) => {
   return (
     <div className="grid-container game-tiles text-center">
       <Link to={`/games/${list.game.id}`}>
-        <h1>{list.game.title}</h1>
+        <h1 className="game-title">{list.game.title}</h1>
       </Link>
       <p>{list.title}</p>
       <img src={list.image} alt={list.title} />
