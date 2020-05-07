@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import GamesIndexTile from "./GamesIndexTile"
+import GamesIndexTile from "../components/GamesIndexTile"
 
-const GamesIndexComponent = (props) => {
+const GamesIndexContainer = (props) => {
   let [games, setGames] = useState([])
   let [currentUser, setCurrentUser] = useState({})
 
@@ -49,4 +49,4 @@ const GamesIndexComponent = (props) => {
   )
 }
 
-export default GamesIndexComponent
+export default GamesIndexContainer

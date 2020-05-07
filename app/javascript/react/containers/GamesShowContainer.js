@@ -51,7 +51,7 @@ const GamesShowContainer = (props) => {
   }
 
   return (
-    <div>
+    <div className="grid-container">
       <GamesShowTile
       key={game.id}
       game={game}
