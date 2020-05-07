@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-const ListsShowComponent = (props) => {
+const ListsShowContainer = (props) => {
   let [list, setList] = useState({
     title: "",
     image: ""
@@ -47,4 +47,4 @@ const ListsShowComponent = (props) => {
   )
 }
 
-export default ListsShowComponent
+export default ListsShowContainer
