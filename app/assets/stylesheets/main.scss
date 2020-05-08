@@ -1,3 +1,8 @@
+.small-12 {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 body {
   background-color: #b4f2e1;
 }
@@ -7,24 +12,65 @@ img {
   border-radius: 15px;
 }
 
+button {
+  font-weight: 400;
+  font-family: sans-serif;
+  width: 160px;
+  height: 50px;
+  background-color: #77d8d8;
+  border-radius: 15px;
+  border: solid;
+}
+
+button:hover {
+  font-weight: 800;
+  font-family: sans-serif;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #58b4ae;
+  cursor: pointer;
+}
+
 a {
-  color: #fa9191;
+  // color: #fa9191;
+  //color: black;
+  color: #0779e4;
 }
 
 a:hover {
   color: #eb6383;
+  // color: black;
   font-weight: bold;
+}
+
+.actions > input {
+  font-weight: 400;
+  font-family: sans-serif;
+  width: 160px;
+  height: 50px;
+  background-color: #77d8d8;
+  border-radius: 15px;
+  border: solid;
+}
+
+.actions > input:hover {
+  font-weight: 800;
+  font-family: sans-serif;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #58b4ae;
+  cursor: pointer;
+}
+
+#webpage-grid {
+  padding: 30px;
+  border: solid;
+  border-radius: 15px;
+  background-color: #fa9191;
 }
 
 .grid-container {
   margin-top: 25px;
   padding-left: 25px;
   padding-right: 25px;
-}
-
-.website-title {
-  background-color: purple;
-  color: purple;
 }
 
 .game-title {
@@ -50,6 +96,12 @@ li {
 }
 
 p {
+  color: #00263b;
+  font-family: VT323;
+  font-size: 24px;
+}
+
+label {
   color: #00263b;
   font-family: VT323;
   font-size: 24px;
