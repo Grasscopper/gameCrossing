@@ -17,11 +17,6 @@ class Api::V1::GamesController < ApplicationController
 
   def create
     game = Game.new(game_params)
-    # user = User.find(user_params["id"])
-    #
-    # # game.update(user: user)
-    # game.update(user_id: user.id)
-
     if game.save
       render json: game
     else
@@ -44,8 +39,4 @@ class Api::V1::GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:id, :title, :image, :start_date, :time_played, :progress, :user_id)
   end
-
-  # def user_params
-  #   params.require(:user).permit(:id)
-  # end
 end
