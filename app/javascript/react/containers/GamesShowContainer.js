@@ -75,7 +75,7 @@ const GamesShowContainer = (props) => {
       setListForm(false)
     })
     .catch((error) => {
-      console.error(`Error posting game: ${error.message}`)
+      console.error(`Error posting list: ${error.message}`)
     })
   }
 
