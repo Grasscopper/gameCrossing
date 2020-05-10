@@ -111,7 +111,7 @@ const GamesShowContainer = (props) => {
         {displayListForm}
       </div>
       <div className="grid-container game-tiles text-center">
-        <h2 className="underline">To - Do Lists</h2>
+        <h2 className="underline">Lists</h2>
         {listTiles}
       </div>
     </div>
