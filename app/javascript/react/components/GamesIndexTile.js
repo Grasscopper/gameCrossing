@@ -4,6 +4,16 @@ import { Link } from "react-router-dom"
 const GamesIndexTile = (props) => {
   let gameID = props.game.id
 
+  const sendDeletionGame = (event) => {
+    event.preventDefault()
+    props.deleteGame(gameID)
+  }
+
+  let deleteGameButton = null
+  if (props.deletion) {
+    deleteGameButton = <button onClick={sendDeletionGame} className="new-list-button">Delete game</button>
+  }
+
   return (
     <div className="grid-container game-tiles text-center">
       <Link to={`/games/${gameID}`}>
@@ -16,6 +26,7 @@ const GamesIndexTile = (props) => {
         <option value="3">Strong progress</option>
         <option value="4">Beat</option>
       </select>
+      {deleteGameButton}
     </div>
   )
 }
