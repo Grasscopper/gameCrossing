@@ -1,9 +1,7 @@
 class Api::V1::GamesController < ApplicationController
-  before_action :authorize_user, except: [:index, :show, :create]
-
   def index
     render json: {
-      games: Game.all,
+      games: current_user.games,
       currentUser: current_user
     }
   end
@@ -22,6 +20,12 @@ class Api::V1::GamesController < ApplicationController
     else
       render json: {error: game.errors.full_messages.to_sentence}
     end
+  end
+
+  def destroy
+    deleteGame = Game.find(params["id"])
+    deleteGame.delete
+    render json: current_user.games
   end
 
   def serialized_data(data, serializer)
