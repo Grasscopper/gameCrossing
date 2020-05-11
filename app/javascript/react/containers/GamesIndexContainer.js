@@ -124,7 +124,7 @@ const GamesIndexContainer = (props) => {
   }
 
   let displayGameForm = <button onClick={changeGameForm}>New game form</button>
-  let displayGameDeleteButton = <button id="game-delete" onClick={changeGameDelete}>Delete games</button>
+  let displayGameDeleteButton = <button id="delete-games" onClick={changeGameDelete}>Delete games</button>
 
   if (gameForm) {
       displayGameForm = <div><button onClick={changeGameForm}>Back to collection</button><GamesNewComponent currentUser={currentUser} postNewGame={postNewGame}/></div>

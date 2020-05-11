@@ -15,6 +15,7 @@ const GamesShowContainer = (props) => {
   })
   let [lists, setLists] = useState([])
   let [listForm, setListForm] = useState(false)
+  let [deletion, setDeletion] = useState(false)
 
   let gameID = props.match.params.id
   useEffect(() => {
@@ -79,13 +80,50 @@ const GamesShowContainer = (props) => {
     })
   }
 
+  const deleteList = (listID) => {
+    fetch(`/api/v1/lists/${listID}`, {
+      credentials: "same-origin",
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status}: ${response.statusText}`
+        let error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((body) => {
+      setLists(body)
+    })
+    .catch((error) => {
+      console.error(`Error deleting list: ${error.message}`)
+    })
+  }
+
   const changeListForm = (event) => {
     setListForm(!listForm)
   }
 
+  const changeListDelete = (event) => {
+    event.preventDefault()
+    setDeletion(!deletion)
+  }
+
+  let displayListDeleteButton = <button id="delete-games" onClick={changeListDelete}>Delete lists</button>
+
   let displayListForm = <button onClick={changeListForm} className="new-list-buttons">New list form</button>
   if (listForm) {
       displayListForm = <div><button onClick={changeListForm} className="new-list-buttons">Back to game</button><ListsNewComponent game={game} postNewList={postNewList}/></div>
+      displayListDeleteButton = null
   }
 
   let listTiles = lists.map((list) => {
@@ -93,6 +131,8 @@ const GamesShowContainer = (props) => {
       <ListsIndexTile
       key={list.id}
       list={list}
+      deletion={deletion}
+      deleteList={deleteList}
       />
     )
   })
@@ -109,6 +149,7 @@ const GamesShowContainer = (props) => {
         game={game}
         />
         {displayListForm}
+        {displayListDeleteButton}
       </div>
       <div className="grid-container game-tiles text-center">
         <h2 className="underline">Lists</h2>
