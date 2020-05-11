@@ -110,6 +110,7 @@ const GamesShowContainer = (props) => {
   }
 
   const changeListForm = (event) => {
+    event.preventDefault()
     setListForm(!listForm)
   }
 

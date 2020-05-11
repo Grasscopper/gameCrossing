@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import PointsNewComponent from "../components/PointsNewComponent"
+import PointsIndexTile from "../components/PointsIndexTile"
 
 const ListsShowContainer = (props) => {
   let [list, setList] = useState({
@@ -11,6 +12,7 @@ const ListsShowContainer = (props) => {
   })
   let [points, setPoints] = useState([])
   let [pointForm, setPointForm] = useState(false)
+  let [deletion, setDeletion] = useState(false)
 
   let listID = props.match.params.id
   useEffect(() => {
@@ -62,6 +64,7 @@ const ListsShowContainer = (props) => {
       setPoints([
         ...points,
         {
+          id: body.id,
           title: body.title,
           list_id: body.list_id
         }
@@ -73,18 +76,62 @@ const ListsShowContainer = (props) => {
     })
   }
 
+  const deletePoint = (pointID) => {
+    fetch(`/api/v1/points/${pointID}`, {
+      credentials: "same-origin",
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status}: ${response.statusText}`
+        let error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((body) => {
+      setPoints(body)
+    })
+    .catch((error) => {
+      console.error(`Error deleting point: ${error.message}`)
+    })
+  }
+
   const changePointForm = (event) => {
+    event.preventDefault()
     setPointForm(!pointForm)
   }
+
+  const changePointDelete = (event) => {
+    event.preventDefault()
+    setDeletion(!deletion)
+  }
+
+  let displayPointDeleteButton = <button className="game-buttons" onClick={changePointDelete}>Delete points</button>
 
   let displayPointForm = <button onClick={changePointForm} className="game-buttons text-center">New point form</button>
   if (pointForm) {
       displayPointForm = <div><button onClick={changePointForm} className="game-buttons text-center">Back to list</button><PointsNewComponent key={list.id} list={list} postNewPoint={postNewPoint} /></div>
+      displayPointDeleteButton = null
   }
 
   let pointTiles = points.map((point) => {
     return (
-      <p>{point.title}</p>
+      <PointsIndexTile
+      key={point.id}
+      id={point.id}
+      point={point}
+      deletion={deletion}
+      deletePoint={deletePoint}
+      />
     )
   })
 
@@ -97,6 +144,7 @@ const ListsShowContainer = (props) => {
       <img src={list.image} alt={list.title} />
       <div className="text-center new-point-button">
         {displayPointForm}
+        {displayPointDeleteButton}
       </div>
       <ul>
         {pointTiles}

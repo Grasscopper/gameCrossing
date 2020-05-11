@@ -20,7 +20,8 @@ ul {
 }
 
 body {
-  background-color: #b4f2e1;
+  // background-color: #b4f2e1;
+  background-color: #fa9191;
 }
 
 img {
@@ -51,9 +52,45 @@ button:hover {
 }
 
 a {
-  // color: #fa9191;
-  //color: black;
-  color: #0779e4;
+  color: #fa9191;
+  // color: black;
+  // color: #0779e4;
+}
+
+a[href="/users/sign_in"] {
+  color: black;
+  font-family: sans-serif;
+}
+
+a[href="/users/sign_in"]:hover {
+  color: black;
+  font-family: sans-serif;
+}
+
+a[href="/users/sign_up"] {
+  color: black;
+  font-family: sans-serif;
+}
+
+a[href="/users/sign_up"]:hover {
+  color: black;
+  font-family: sans-serif;
+}
+
+a[href="/users/password/new"] {
+  color: black;
+  font-family: sans-serif;
+}
+
+a[href="/users/password/new"]:hover {
+  color: black;
+  font-family: sans-serif;
+}
+
+.grid-container > h1 > a {
+  // color: black;
+  font-family: VT323;
+  color: #fa9191
 }
 
 a:hover {
@@ -84,7 +121,8 @@ a:hover {
   padding: 30px;
   border: solid;
   border-radius: 15px;
-  background-color: #fa9191;
+  // background-color: #fa9191;
+  background-color: #b4f2e1;
 }
 
 .grid-container {
@@ -104,6 +142,16 @@ a:hover {
 
 li {
   background-color: #ffe9c5;
+}
+
+li > a {
+  color: black;
+  font-family: sans-serif;
+}
+
+li > a:hover {
+  color: black;
+  font-family: sans-serif;
 }
 
 .game-tiles {

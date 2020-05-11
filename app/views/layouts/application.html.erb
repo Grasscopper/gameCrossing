@@ -9,7 +9,11 @@
 <body>
 
   <nav class="top-bar">
-    <h1><a href="/">Game Crossing</a></h1>
+    <% if user_signed_in? %>
+      <h1><a href="/games">Game Crossing</a></h1>
+    <% else %>
+      <h1><a href="/">Game Crossing</a></h1>
+    <% end %>
 
     <section class="top-bar-section">
       <ul class="right">

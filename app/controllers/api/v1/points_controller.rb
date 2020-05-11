@@ -4,6 +4,12 @@ class Api::V1::PointsController < ApplicationController
     render json: point
   end
 
+  def destroy
+    deletePoint = Point.find(params["id"])
+    deletePoint.delete
+    render json: deletePoint.list.points
+  end
+
   protected
 
   def point_params

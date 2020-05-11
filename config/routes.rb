@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :games, only: [:index, :show, :create, :destroy]
       resources :lists, only: [:show, :create, :destroy]
-      resources :points, only: [:create]
+      resources :points, only: [:create, :destroy]
     end
   end
 
