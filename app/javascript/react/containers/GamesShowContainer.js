@@ -118,11 +118,11 @@ const GamesShowContainer = (props) => {
     setDeletion(!deletion)
   }
 
-  let displayListDeleteButton = <button id="delete-games" onClick={changeListDelete}>Delete lists</button>
+  let displayListDeleteButton = <button className="game-buttons" onClick={changeListDelete}>Delete lists</button>
 
-  let displayListForm = <button onClick={changeListForm} className="new-list-buttons">New list form</button>
+  let displayListForm = <button className="game-buttons" onClick={changeListForm} className="game-buttons">New list form</button>
   if (listForm) {
-      displayListForm = <div><button onClick={changeListForm} className="new-list-buttons">Back to game</button><ListsNewComponent game={game} postNewList={postNewList}/></div>
+      displayListForm = <div><button className="game-buttons" onClick={changeListForm}>Back to game</button><ListsNewComponent game={game} postNewList={postNewList}/></div>
       displayListDeleteButton = null
   }
 
@@ -143,7 +143,7 @@ const GamesShowContainer = (props) => {
 
   return (
     <div className="grid-container">
-      <div className="game-tiles text-center">
+      <div className="game-tiles text-center show-tile">
         <GamesShowTile
         key={game.id}
         game={game}

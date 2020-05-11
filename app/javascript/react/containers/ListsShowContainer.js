@@ -77,9 +77,9 @@ const ListsShowContainer = (props) => {
     setPointForm(!pointForm)
   }
 
-  let displayPointForm = <button onClick={changePointForm} className="new-list-buttons text-center">New point form</button>
+  let displayPointForm = <button onClick={changePointForm} className="game-buttons text-center">New point form</button>
   if (pointForm) {
-      displayPointForm = <div><button onClick={changePointForm} className="new-list-buttons text-center">Back to list</button><PointsNewComponent key={list.id} list={list} postNewPoint={postNewPoint} /></div>
+      displayPointForm = <div><button onClick={changePointForm} className="game-buttons text-center">Back to list</button><PointsNewComponent key={list.id} list={list} postNewPoint={postNewPoint} /></div>
   }
 
   let pointTiles = points.map((point) => {
