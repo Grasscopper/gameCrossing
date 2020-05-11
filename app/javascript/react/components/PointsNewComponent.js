@@ -31,23 +31,9 @@ const PointsNewComponent = (props) => {
           value={formPayload.title}
           />
 
-      <button type="submit" value="Submit" className="new-list-buttons">Add new point</button>
+      <button type="submit" value="Submit" className="game-buttons">Add new point</button>
     </form>
   )
 }
 
 export default PointsNewComponent
-
-// <div className="grid-x">
-//   <div className="small-12 medium-6">
-//     <label htmlFor="title">Title</label>
-//     <input
-//     id="title"
-//     name="title"
-//     type="text"
-//     className="text-center"
-//     onChange={update}
-//     value={formPayload.title}
-//     />
-//   </div>
-// </div>
