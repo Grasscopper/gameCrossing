@@ -7,7 +7,7 @@ const GamesShowTile = (props) => {
       <img src={props.game.image} alt={props.game.title} />
       <p>Started Playing: {props.game.start_date}</p>
       <p>Time Played: {props.game.time_played}</p>
-      <p>Progress: {props.game.progress}</p>
+      <p>Notes: {props.game.progress}</p>
     </>
   )
 }

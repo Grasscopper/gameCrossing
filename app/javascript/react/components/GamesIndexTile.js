@@ -11,7 +11,7 @@ const GamesIndexTile = (props) => {
 
   let deleteGameButton = null
   if (props.deletion) {
-    deleteGameButton = <button onClick={sendDeletionGame} className="new-list-button">Delete game</button>
+    deleteGameButton = <button id="delete-game" onClick={sendDeletionGame}>Delete game</button>
   }
 
   return (

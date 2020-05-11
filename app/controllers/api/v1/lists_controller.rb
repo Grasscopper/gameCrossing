@@ -15,6 +15,12 @@ class Api::V1::ListsController < ApplicationController
     end
   end
 
+  def destroy
+    deleteList = List.find(params["id"])
+    deleteList.delete
+    render json: deleteList.game.lists
+  end
+
   def serialized_data(data, serializer)
    ActiveModelSerializers::SerializableResource.new(data, serializer: serializer)
   end
