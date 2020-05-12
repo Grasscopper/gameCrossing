@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 
 const GamesIndexTile = (props) => {
+  // event.currentTarget.children.item(0).value
+  // "0"
+
   let gameID = props.game.id
 
   const sendDeletionGame = (event) => {
@@ -14,12 +17,16 @@ const GamesIndexTile = (props) => {
     deleteGameButton = <button id="delete-game" onClick={sendDeletionGame}>Delete game</button>
   }
 
+  const dropdown = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <div className="grid-container game-tiles text-center">
       <Link to={`/games/${gameID}`}>
         <h1 className="game-title">{props.game.title}</h1>
       </Link>
-      <select>
+      <select id="game-progress" onChange={dropdown}>
         <option value="0">Unplayed</option>
         <option value="1">Began playing</option>
         <option value="2">Good progress</option>
