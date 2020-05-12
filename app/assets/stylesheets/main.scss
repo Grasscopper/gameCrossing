@@ -1,3 +1,20 @@
+.progress {
+  height: 50px;
+  background-color: #eb6383;
+  margin-bottom: 16px;
+}
+
+.progress-clicked {
+  font-weight: 800;
+  font-family: sans-serif;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  // background-color: #58b4ae;
+  background-color: #77d8d8;
+  cursor: pointer;
+  border-radius: 0px;
+  margin-bottom: 16px;
+}
+
 .small-12 {
   padding-right: 20px;
   padding-left: 20px;
