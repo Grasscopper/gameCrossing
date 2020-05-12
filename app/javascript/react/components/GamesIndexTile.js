@@ -3,14 +3,13 @@ import { Link } from "react-router-dom"
 
 const GamesIndexTile = (props) => {
   let [status, setStatus] = useState({
-    unplayed: "progress",
+    unplayed: "progress-clicked",
     started: "progress",
     progress: "progress",
     progressOne: "progress",
     progressTwo: "progress",
     beat: "progress"
   })
-
 
   let gameID = props.game.id
 
@@ -94,12 +93,12 @@ const GamesIndexTile = (props) => {
       case "beat":
         setStatus(
           {
-            unplayed: "progress-clicked",
-            started: "progress-clicked",
-            progress: "progress-clicked",
-            progressOne: "progress-clicked",
-            progressTwo: "progress-clicked",
-            beat: "progress-clicked"
+            unplayed: "progress-beat",
+            started: "progress-beat",
+            progress: "progress-beat",
+            progressOne: "progress-beat",
+            progressTwo: "progress-beat",
+            beat: "progress-beat"
           }
         )
         break
@@ -111,7 +110,7 @@ const GamesIndexTile = (props) => {
       case "unplayed":
         setStatus(
           {
-            unplayed: "progress",
+            unplayed: "progress-clicked",
             started: "progress",
             progress: "progress",
             progressOne: "progress",
@@ -125,7 +124,7 @@ const GamesIndexTile = (props) => {
         setStatus(
           {
             unplayed: "progress-clicked",
-            started: "progress",
+            started: "progress-clicked",
             progress: "progress",
             progressOne: "progress",
             progressTwo: "progress",
@@ -139,7 +138,7 @@ const GamesIndexTile = (props) => {
           {
             unplayed: "progress-clicked",
             started: "progress-clicked",
-            progress: "progress",
+            progress: "progress-clicked",
             progressOne: "progress",
             progressTwo: "progress",
             beat: "progress"
@@ -153,7 +152,7 @@ const GamesIndexTile = (props) => {
             unplayed: "progress-clicked",
             started: "progress-clicked",
             progress: "progress-clicked",
-            progressOne: "progress",
+            progressOne: "progress-clicked",
             progressTwo: "progress",
             beat: "progress"
           }
@@ -167,7 +166,7 @@ const GamesIndexTile = (props) => {
             started: "progress-clicked",
             progress: "progress-clicked",
             progressOne: "progress-clicked",
-            progressTwo: "progress",
+            progressTwo: "progress-clicked",
             beat: "progress"
           }
         )
@@ -176,12 +175,12 @@ const GamesIndexTile = (props) => {
       case "beat":
         setStatus(
           {
-            unplayed: "progress-clicked",
-            started: "progress-clicked",
-            progress: "progress-clicked",
-            progressOne: "progress-clicked",
-            progressTwo: "progress-clicked",
-            beat: "progress"
+            unplayed: "progress-beat",
+            started: "progress-beat",
+            progress: "progress-beat",
+            progressOne: "progress-beat",
+            progressTwo: "progress-beat",
+            beat: "progress-beat"
           }
         )
         break
@@ -190,7 +189,7 @@ const GamesIndexTile = (props) => {
 
   const statusClicked = (event) => {
     event.preventDefault()
-    if (event.currentTarget.className === "progress-clicked") {
+    if (event.currentTarget.className === "progress-clicked" || event.currentTarget.className === "progress-beat") {
       downToFunction(event.currentTarget.id)
     } else {
       upToFunction(event.currentTarget.id)
