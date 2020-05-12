@@ -10,10 +10,12 @@
 
   <nav class="top-bar">
     <% if user_signed_in? %>
-      <h1><a href="/games">Game Crossing</a></h1>
+      <h1><a href="/games" class="game-crossing">Game Crossing</a> <a href="/featuredgame" class="featured-game">Featured</a></h1>
     <% else %>
-      <h1><a href="/">Game Crossing</a></h1>
+      <h1><a href="/" class="game-crossing">Game Crossing</a> <a href="/featuredgame" class="featured-game">Featured</a></h1>
     <% end %>
+
+    <!-- <h1><a href="/featuredgame">Featured Game</a></h1> -->
 
     <section class="top-bar-section">
       <ul class="right">
