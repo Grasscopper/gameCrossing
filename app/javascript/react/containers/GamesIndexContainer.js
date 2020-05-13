@@ -108,6 +108,36 @@ const GamesIndexContainer = (props) => {
     })
   }
 
+  const fetchEditGameStatus = (gameID, status) => {
+    fetch(`/api/v1/games/${gameID}`, {
+      credentials: "same-origin",
+      method: "PATCH",
+      body: JSON.stringify(status),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status}: ${response.statusText}`
+        let error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((body) => {
+      setGames(body)
+    })
+    .catch((error) => {
+      console.error(`Error editing game: ${error.message}`)
+    })
+  }
+
   let currentUserHeader = <h1 className="text-center">{currentUser.user_name}'s Collection</h1>
   if (currentUser.user_name === "") {
     currentUserHeader = <div className="grid-container text-center"><div className="game-tiles"><h1>Welcome to Game Crossing!</h1></div><h1><a href="/users/sign_up">Sign up to start your video game collection</a></h1><h1><a href="/users/sign_in">Log in</a></h1></div>
@@ -142,6 +172,7 @@ const GamesIndexContainer = (props) => {
       game={game}
       deletion={deletion}
       deleteGame={deleteGame}
+      fetchEditGameStatus={fetchEditGameStatus}
       />
     )
   })

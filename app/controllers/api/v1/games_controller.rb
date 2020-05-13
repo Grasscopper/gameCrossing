@@ -1,7 +1,7 @@
 class Api::V1::GamesController < ApplicationController
   def index
     render json: {
-      games: current_user.games,
+      games: current_user.games.order(:id),
       currentUser: current_user
     }
   end
@@ -28,6 +28,12 @@ class Api::V1::GamesController < ApplicationController
     render json: current_user.games
   end
 
+  def update
+    game = Game.find(params["id"])
+    game.update(status: params["_json"])
+    render json: current_user.games.order(:id)
+  end
+
   def serialized_data(data, serializer)
    ActiveModelSerializers::SerializableResource.new(data, serializer: serializer)
   end
@@ -41,6 +47,6 @@ class Api::V1::GamesController < ApplicationController
   protected
 
   def game_params
-    params.require(:game).permit(:id, :title, :image, :start_date, :time_played, :progress, :user_id)
+    params.require(:game).permit(:id, :title, :image, :start_date, :time_played, :progress, :status, :user_id)
   end
 end
