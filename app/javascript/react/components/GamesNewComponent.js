@@ -89,7 +89,7 @@ const GamesNewComponent = (props) => {
         />
       </div>
 
-      <button type="submit" value="Submit">Add new game</button>
+      <button type="submit" value="Submit" id="add-new-game">Add New Game</button>
     </form>
   )
 }

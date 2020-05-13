@@ -31,7 +31,7 @@ const PointsNewComponent = (props) => {
           value={formPayload.title}
           />
 
-      <button type="submit" value="Submit" className="game-buttons">Add new point</button>
+      <button type="submit" value="Submit" className="game-buttons">Add New Point</button>
     </form>
   )
 }

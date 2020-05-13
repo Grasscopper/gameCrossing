@@ -71,7 +71,7 @@ const FeaturedGame = (props) => {
       </div>
       <div className="text-center">
       <p>Featured game source goes to RAWG Video Games Database API --- Thank you!</p>
-      <a href="https://rawg.io/"><p>https://rawg.io/</p></a>
+      <a href="https://rawg.io/" target="_blank"><p id="rawg">https://rawg.io/</p></a>
       </div>
     </div>
   )

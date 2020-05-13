@@ -1,26 +1,43 @@
 .progress {
   height: 50px;
-  background-color: #eb6383;
+  // background-color: #eb6383;
+  // background-color: #bd6b73;
+  background-color: #f4f4ed;
   margin-bottom: 16px;
 }
 
 .progress-clicked {
-  font-weight: 800;
+  // font-weight: 800;
   font-family: sans-serif;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  // background-color: #58b4ae;
-  background-color: #77d8d8;
+  // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  // background-color: #77d8d8;
+  // background-color: #02c39a;
+  background-color: #a5ffd6;
+  cursor: pointer;
+  border-radius: 0px;
+  margin-bottom: 16px;
+}
+
+.progress:hover {
+  // font-weight: 800;
+  font-family: sans-serif;
+  // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  // background-color: #77d8d8;
+  // background-color: #02c39a;
+  background-color: #84dcc6;
   cursor: pointer;
   border-radius: 0px;
   margin-bottom: 16px;
 }
 
 .progress-beat {
-  font-weight: 800;
+  // font-weight: 800;
   font-family: sans-serif;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  // background-color: #58b4ae;
-  background-color: #ffd31d;
+  // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  // background-color: #ffd31d;
+  // background-color: #c6c8ee;
+  // background-color: #c6c8ee;
+  background-color: #84dcc6;
   cursor: pointer;
   border-radius: 0px;
   margin-bottom: 16px;
@@ -33,10 +50,36 @@
 
 .featured-game {
   font-size: 32px;
-  font-style: italic;
+  // font-style: italic;
   font-family: VT323;
-  color: #b4f2e1;
-  text-shadow: 1px 0 0 black;
+  // color: #b4f2e1;
+  // color: #C6C8EE;
+  color: black;
+  // text-shadow: 1px 0 0 black;
+}
+
+#featured-game-button {
+  background-color: #C6C8EE;
+  font-size: 32px;
+  font-family: VT323;
+  color: black;
+  width: 220px;
+}
+
+#featured-game-button:hover {
+  background-color: #BBB6DF;
+  font-size: 32px;
+  font-family: VT323;
+  color: black;
+}
+
+.featured-game:hover {
+  // font-size: 32px;
+  // font-style: italic;
+  // font-family: VT323;
+  // color: #b4f2e1;
+  color: #BBB6DF;
+  // text-shadow: 1px 0 0 black;
 }
 
 #user_email {
@@ -56,19 +99,42 @@
 }
 
 .game-crossing {
-  text-shadow: 1px 0 0 black;
+  // text-shadow: 1px 0 0 black;
+  color: black;
+  font-family: sans-serif;
 }
 
 .new-point-button {
-  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .game-buttons {
   margin: 10px;
+  background-color: #C6C8EE;
+}
+
+.game-buttons:hover {
+  margin: 10px;
+  background-color: #BBB6DF;
 }
 
 #delete-game {
   margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#delete-game:hover {
+  background-color: #BBB6DF;
+}
+
+#back-to-collection:hover {
+  background-color: #BBB6DF;
+}
+
+#add-new-game:hover {
+  background-color: #BBB6DF;
 }
 
 ul {
@@ -76,8 +142,8 @@ ul {
 }
 
 body {
-  // background-color: #b4f2e1;
-  background-color: #fa9191;
+  // background-color: #fa9191;
+  background-color: #fcfcff;
 }
 
 img {
@@ -90,7 +156,8 @@ button {
   font-family: sans-serif;
   width: 160px;
   height: 50px;
-  background-color: #77d8d8;
+  // background-color: #77d8d8;
+  background-color: #C6C8EE;
   border-radius: 15px;
   border: solid;
 }
@@ -99,77 +166,136 @@ button {
   margin-bottom: 20px;
 }
 
+#rawg {
+  font-weight: bold;
+}
+
+#rawg:hover {
+  font-weight: bold;
+  color: #C6C8EE;
+}
+
+
 button:hover {
-  font-weight: 800;
-  font-family: sans-serif;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  background-color: #58b4ae;
+  // font-weight: 800;
+  // font-family: sans-serif;
+  // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  // background-color: #58b4ae;
+  // background-color: #a5ffd6;
+  // background-color: #BBB6DF;
   cursor: pointer;
 }
 
 a {
   color: #fa9191;
-  // color: black;
-  // color: #0779e4;
 }
 
 a[href="/users/sign_in"] {
   color: black;
   font-family: sans-serif;
+  font-size: 24px;
 }
 
 a[href="/users/sign_in"]:hover {
+  // color: black;
+  color: #c6c8ee;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+a[href="/users/sign_out"] {
   color: black;
   font-family: sans-serif;
+  font-size: 24px;
+}
+
+a[href="/users/sign_out"]:hover {
+  // color: black;
+  color: #c6c8ee;
+  font-family: sans-serif;
+  font-size: 24px;
 }
 
 a[href="/users/sign_up"] {
   color: black;
   font-family: sans-serif;
+  font-size: 24px;
 }
 
 a[href="/users/sign_up"]:hover {
-  color: black;
+  // color: black;
+  color: #c6c8ee;
   font-family: sans-serif;
+  font-size: 24px;
 }
 
 a[href="/users/password/new"] {
   color: black;
   font-family: sans-serif;
+  font-size: 24px;
 }
 
 a[href="/users/password/new"]:hover {
-  color: black;
+  // color: black;
+  color: #c6c8ee;
   font-family: sans-serif;
+  font-size: 24px;
 }
 
 .grid-container > h1 > a {
-  // color: black;
-  font-family: VT323;
-  color: #fa9191
+  // font-family: VT323;
+  // color: #fa9191
+  color: black;
 }
 
 a:hover {
-  color: #eb6383;
-  // color: black;
-  font-weight: bold;
+  // color: #eb6383;
+  color: #c6c8ee;
+  // font-weight: bold;
+}
+
+#title {
+  // background-color: #EDEEF1;
+  border: solid;
+}
+
+#image {
+  // background-color: #EDEEF1;
+  border: solid;
+}
+
+#start_date {
+  // background-color: #EDEEF1;
+  border: solid;
+}
+
+#time_played {
+  // background-color: #EDEEF1;
+  border: solid;
+}
+
+#progress {
+  // background-color: #EDEEF1;
+  border: solid;
 }
 
 .actions > input {
-  font-weight: 400;
+  // font-weight: 400;
   font-family: sans-serif;
   width: 160px;
   height: 50px;
-  background-color: #77d8d8;
+  // background-color: #77d8d8;
+  background-color: #C6C8EE;
   border-radius: 15px;
   border: solid;
 }
 
 .actions > input:hover {
-  font-weight: 800;
+  // font-weight: 800;
   font-family: sans-serif;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  background-color: #58b4ae;
+  // box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  // background-color: #58b4ae;
+  background-color: #BBB6DF;
   cursor: pointer;
 }
 
@@ -177,8 +303,8 @@ a:hover {
   padding: 30px;
   border: solid;
   border-radius: 15px;
-  // background-color: #fa9191;
-  background-color: #b4f2e1;
+  // background-color: #b4f2e1;
+  background-color: #f4f4ed;
 }
 
 .grid-container {
@@ -188,16 +314,19 @@ a:hover {
 }
 
 .game-title {
-  color: #fa9191;
-}
-
-.game-title:hover {
-  color: #eb6383;
+  // color: #fa9191;
+  color: black;
   font-weight: bold;
 }
 
+.game-title:hover {
+  // color: #eb6383;
+  // font-weight: bold;
+  color: #c6c8ee;
+}
+
 li {
-  background-color: #ffe9c5;
+  background-color: #F4F4ED;
 }
 
 li > a {
@@ -206,17 +335,29 @@ li > a {
 }
 
 li > a:hover {
-  color: black;
+  // color: black;
+  color: #c6c8ee;
   font-family: sans-serif;
 }
 
 .game-tiles {
   border: solid;
-  background-color: #ffe9c5;
+  // background-color: #ffe9c5;
+  background-color: #fcfcff;
+
 }
 
 .top-bar {
-  background-color: #ffe9c5;
+  // background-color: #ffe9c5;
+  background-color: #f4f4ed;
+}
+
+#game-show-padding-top {
+  padding-top: 40px;
+}
+
+#game-show-padding-bottom {
+  padding-bottom: 20px;
 }
 
 p {
@@ -231,6 +372,6 @@ label {
   font-size: 24px;
 }
 
-.underline {
-  text-decoration: underline;
-}
+// .underline {
+//   text-decoration: underline;
+// }

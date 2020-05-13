@@ -48,7 +48,7 @@ const ListsNewComponent = (props) => {
         </div>
       </div>
 
-      <button type="submit" value="Submit" className="game-buttons">Add new list</button>
+      <button type="submit" value="Submit" className="game-buttons">Add New List</button>
     </form>
   )
 }

@@ -11,7 +11,7 @@ const ListsIndexTile = (props) => {
 
   let deleteListButton = null
   if (props.deletion) {
-    deleteListButton = <button id="delete-game" onClick={sendDeletionList}>Delete list</button>
+    deleteListButton = <button id="delete-game" onClick={sendDeletionList}>Delete List</button>
   }
 
   return (
