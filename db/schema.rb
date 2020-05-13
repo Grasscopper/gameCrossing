@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_180238) do
     t.string "time_played"
     t.string "progress"
     t.bigint "user_id"
-    t.string "status"
+    t.string "status", default: "unplayed"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
