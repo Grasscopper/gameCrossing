@@ -5,9 +5,9 @@ const GamesShowTile = (props) => {
     <>
       <h1>{props.game.title}</h1>
       <img src={props.game.image} alt={props.game.title} />
-      <p>Started Playing: {props.game.start_date}</p>
+      <p id="game-show-padding-top">Started Playing: {props.game.start_date}</p>
       <p>Time Played: {props.game.time_played}</p>
-      <p>Notes: {props.game.progress}</p>
+      <p id="game-show-padding-bottom">Notes: {props.game.progress}</p>
     </>
   )
 }

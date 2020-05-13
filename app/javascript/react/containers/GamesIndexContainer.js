@@ -123,11 +123,11 @@ const GamesIndexContainer = (props) => {
     setDeletion(!deletion)
   }
 
-  let displayGameForm = <button className="game-buttons" onClick={changeGameForm}>New game form</button>
-  let displayGameDeleteButton = <button className="game-buttons" onClick={changeGameDelete}>Delete games</button>
+  let displayGameForm = <button className="game-buttons" onClick={changeGameForm}>New Game Form</button>
+  let displayGameDeleteButton = <button className="game-buttons" onClick={changeGameDelete}>Delete Games</button>
 
   if (gameForm || currentUser.user_name === "") {
-      displayGameForm = <div><button onClick={changeGameForm}>Back to collection</button><GamesNewComponent currentUser={currentUser} postNewGame={postNewGame}/></div>
+      displayGameForm = <div><button onClick={changeGameForm} id="back-to-collection">Back to Collection</button><GamesNewComponent currentUser={currentUser} postNewGame={postNewGame}/></div>
       displayGameDeleteButton = null
   }
 

@@ -115,11 +115,11 @@ const ListsShowContainer = (props) => {
     setDeletion(!deletion)
   }
 
-  let displayPointDeleteButton = <button className="game-buttons" onClick={changePointDelete}>Delete points</button>
+  let displayPointDeleteButton = <button className="game-buttons" onClick={changePointDelete}>Delete Points</button>
 
-  let displayPointForm = <button onClick={changePointForm} className="game-buttons text-center">New point form</button>
+  let displayPointForm = <button onClick={changePointForm} className="game-buttons text-center">New Point Form</button>
   if (pointForm) {
-      displayPointForm = <div><button onClick={changePointForm} className="game-buttons text-center">Back to list</button><PointsNewComponent key={list.id} list={list} postNewPoint={postNewPoint} /></div>
+      displayPointForm = <div><button onClick={changePointForm} className="game-buttons text-center">Back to List</button><PointsNewComponent key={list.id} list={list} postNewPoint={postNewPoint} /></div>
       displayPointDeleteButton = null
   }
 

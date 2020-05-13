@@ -10,7 +10,7 @@ const PointsIndexTile = (props) => {
 
   let deletePointButton = null
   if (props.deletion) {
-    deletePointButton = <button className="game-buttons" onClick={sendDeletionPoint}>Delete point</button>
+    deletePointButton = <button className="game-buttons" onClick={sendDeletionPoint}>Delete Point</button>
   }
 
   return (

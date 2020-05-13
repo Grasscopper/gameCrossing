@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+
+import ProgressIndexTile from "./ProgressIndexTile"
 
 const GamesIndexTile = (props) => {
   let [status, setStatus] = useState({
@@ -20,7 +22,7 @@ const GamesIndexTile = (props) => {
 
   let deleteGameButton = null
   if (props.deletion) {
-    deleteGameButton = <button id="delete-game" onClick={sendDeletionGame}>Delete game</button>
+    deleteGameButton = <button id="delete-game" onClick={sendDeletionGame}>Delete Game</button>
   }
 
   const upToFunction = (status) => {
@@ -201,24 +203,10 @@ const GamesIndexTile = (props) => {
       <Link to={`/games/${gameID}`}>
         <h1 className="game-title">{props.game.title}</h1>
       </Link>
-      <button id="unplayed" className={status.unplayed} onClick={statusClicked}>
-      Unplayed</button>
-
-      <button id="started" className={status.started} onClick={statusClicked}>
-      Started</button>
-
-      <button id="progress" className={status.progress} onClick={statusClicked}>
-      Progress</button>
-
-      <button id="progressOne" className={status.progressOne} onClick={statusClicked}>
-      Progress+</button>
-
-      <button id="progressTwo" className={status.progressTwo} onClick={statusClicked}>
-      Progress++</button>
-
-      <button id="beat" className={status.beat} onClick={statusClicked}>
-      Beat</button>
-
+      <ProgressIndexTile
+      status={status}
+      statusClicked={statusClicked}
+      />
       {deleteGameButton}
     </div>
   )
