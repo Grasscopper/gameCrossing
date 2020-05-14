@@ -18,20 +18,39 @@ const ChartComponent = (props) => {
       case 'started':
       started++
       break
+
       case 'progress':
       progress++
       break
+
       case 'progressOne':
       progressOne++
       break
+
       case 'progressTwo':
       progressTwo++
       break
+
       case 'beat':
       beat++
       break
     }
   })
+
+  const sumOfChart = () => {
+    let sum = 0
+    sum += unplayed
+    sum += started
+    sum += progress
+    sum += progressOne
+    sum += progressTwo
+    sum += beat
+    return sum
+  }
+
+  if (props.games.length - sumOfChart()) { //if new game added
+    unplayed++
+  }
 
 
   return (
@@ -52,9 +71,10 @@ const ChartComponent = (props) => {
     options={{
       title: 'Collection Progress',
       colors: ['#471671', '#6F2DBD', '#A663CC', '#B298DC', '#B8D0EB', '#B9FAF8'],
+      //last two colors possibly: #B8D0EB, #B9FAF8
+      //last two colors possibly: #A5FFD6, #83DCC6
       backgroundColor: '#f4f4ed',
       pieSliceTextStyle: {
-      // color: 'black',
       bold: true,
       fontSize: 16
       },

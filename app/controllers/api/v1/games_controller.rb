@@ -39,6 +39,11 @@ class Api::V1::GamesController < ApplicationController
     end
   end
 
+  def featured
+    key = ENV["REACT_APP_KEY"]
+    render json: key.to_json
+  end
+
   def serialized_data(data, serializer)
    ActiveModelSerializers::SerializableResource.new(data, serializer: serializer)
   end

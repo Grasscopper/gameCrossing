@@ -176,6 +176,15 @@ const GamesIndexContainer = (props) => {
     displayGameForm = null
   }
 
+  let chart = <div className="chart-parent">
+  <div className="progress-chart">
+  <ChartComponent games={games} />
+  </div>
+  </div>
+  if (games.length === 0) {
+    chart = null
+  }
+  
   let gameTiles = games.map((game) => {
     return (
       <GamesIndexTile
@@ -189,14 +198,11 @@ const GamesIndexContainer = (props) => {
     )
   })
 
+
   return (
     <div className="grid-container" id="webpage-grid">
       {currentUserHeader}
-      <div className="chart-parent">
-        <div className="progress-chart">
-          <ChartComponent games={games} />
-        </div>
-      </div>
+      {chart}
       <div className="text-center">
         {displayGameForm}
         {displayGameEditButton}

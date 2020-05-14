@@ -10,11 +10,33 @@ const FeaturedGame = (props) => {
   const NintendoID = 16257
 
   useEffect(() => {
+    fetch('/api/v1/games/featured')
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status}: ${response.statusText}`
+        let error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((key) => {
+      getFeatured(key)
+    })
+    .catch((error) => {
+      console.error(`Error fetching: ${error.message}`)
+    })
+  }, [])
+
+  const getFeatured = (key) => {
     fetch(`https://rawg-video-games-database.p.rapidapi.com/games?dates=2015-03-03,2020-12-31&developers=${NintendoID}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-        "x-rapidapi-key": "485d6806b2msh89b002ffc5148c9p17fbaajsnb351e857eaa3"
+        "x-rapidapi-key": key
       }
     })
     .then(response => {
@@ -29,7 +51,7 @@ const FeaturedGame = (props) => {
     .catch(err => {
       console.log(err);
     })
-  }, [])
+  }
 
   let platforms = ""
   let featuredPlatforms = featured.platforms.map((currentPlatform, index) => {
