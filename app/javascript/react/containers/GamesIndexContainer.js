@@ -10,6 +10,7 @@ const GamesIndexContainer = (props) => {
     email: ""
   })
   let [gameForm, setGameForm] = useState(false)
+  let [edit, setEdit] = useState(false)
   let [deletion, setDeletion] = useState(false)
 
   useEffect(() => {
@@ -148,16 +149,25 @@ const GamesIndexContainer = (props) => {
     setGameForm(!gameForm)
   }
 
+  const changeGameEdit = (event) => {
+    event.preventDefault()
+    setEdit(!edit)
+  }
+
   const changeGameDelete = (event) => {
     event.preventDefault()
     setDeletion(!deletion)
   }
 
   let displayGameForm = <button className="game-buttons" onClick={changeGameForm}>New Game Form</button>
+
+  let displayGameEditButton = <button className="game-buttons" onClick={changeGameEdit}>Edit Games</button>
+
   let displayGameDeleteButton = <button className="game-buttons" onClick={changeGameDelete}>Delete Games</button>
 
   if (gameForm || currentUser.user_name === "") {
       displayGameForm = <div><button onClick={changeGameForm} id="back-to-collection">Back to Collection</button><GamesNewComponent currentUser={currentUser} postNewGame={postNewGame}/></div>
+      displayGameEditButton = null
       displayGameDeleteButton = null
   }
 
@@ -170,6 +180,7 @@ const GamesIndexContainer = (props) => {
       <GamesIndexTile
       key={game.id}
       game={game}
+      edit={edit}
       deletion={deletion}
       deleteGame={deleteGame}
       fetchEditGameStatus={fetchEditGameStatus}
@@ -182,6 +193,7 @@ const GamesIndexContainer = (props) => {
       {currentUserHeader}
       <div className="text-center">
         {displayGameForm}
+        {displayGameEditButton}
         {displayGameDeleteButton}
       </div>
       {gameTiles}
