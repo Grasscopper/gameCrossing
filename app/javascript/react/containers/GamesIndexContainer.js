@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import GamesIndexTile from "../components/GamesIndexTile"
 import GamesNewComponent from "../components/GamesNewComponent"
+import ChartComponent from "../components/ChartComponent"
 
 const GamesIndexContainer = (props) => {
   let [games, setGames] = useState([])
@@ -191,6 +192,11 @@ const GamesIndexContainer = (props) => {
   return (
     <div className="grid-container" id="webpage-grid">
       {currentUserHeader}
+      <div className="chart-parent">
+        <div className="progress-chart">
+          <ChartComponent games={games} />
+        </div>
+      </div>
       <div className="text-center">
         {displayGameForm}
         {displayGameEditButton}
