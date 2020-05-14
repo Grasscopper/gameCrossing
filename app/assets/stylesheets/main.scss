@@ -113,9 +113,21 @@
   padding-bottom: 20px;
 }
 
+#point-title {
+  font-family: sans-serif;
+}
+
+#delete-point {
+  border-radius: 0px;
+}
+
 #edit-game {
   margin: 20px;
   margin-bottom: 40px;
+}
+
+#edit-game:hover {
+  background-color: #C6C8EE;
 }
 
 #edit-list {
