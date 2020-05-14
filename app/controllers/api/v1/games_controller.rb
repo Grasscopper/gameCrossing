@@ -30,8 +30,13 @@ class Api::V1::GamesController < ApplicationController
 
   def update
     game = Game.find(params["id"])
-    game.update(status: params["_json"])
-    render json: current_user.games.order(:id)
+    if !params["_json"].nil?
+      game.update(status: params["_json"])
+      render json: current_user.games.order(:id)
+    else
+      game.update(game_params)
+      render json: current_user.games.order(:id)
+    end
   end
 
   def serialized_data(data, serializer)
