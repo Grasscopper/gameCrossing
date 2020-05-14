@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :games, only: [:index, :show, :create, :destroy, :update]
+      resources :games, only: [:index, :show, :create, :destroy, :update, :feature] do
+        collection { get 'featured' }
+      end
       resources :lists, only: [:show, :create, :destroy, :update]
       resources :points, only: [:create, :destroy, :update]
     end
