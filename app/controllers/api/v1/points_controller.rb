@@ -10,6 +10,12 @@ class Api::V1::PointsController < ApplicationController
     render json: deletePoint.list.points
   end
 
+  def update
+    point = Point.find(params["id"])
+    point.update(point_params)
+    render json: point.list.points.order(:id)
+  end
+
   protected
 
   def point_params
