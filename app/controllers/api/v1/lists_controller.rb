@@ -21,6 +21,12 @@ class Api::V1::ListsController < ApplicationController
     render json: deleteList.game.lists
   end
 
+  def update
+    list = List.find(params["id"])
+    list.update(list_params)
+    render json: list.game.lists.order(:id)
+  end
+
   def serialized_data(data, serializer)
    ActiveModelSerializers::SerializableResource.new(data, serializer: serializer)
   end
