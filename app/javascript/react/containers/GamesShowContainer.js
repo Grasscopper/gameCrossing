@@ -16,6 +16,7 @@ const GamesShowContainer = (props) => {
   let [lists, setLists] = useState([])
   let [listForm, setListForm] = useState(false)
   let [deletion, setDeletion] = useState(false)
+  let [edit, setEdit] = useState(false)
 
   let gameID = props.match.params.id
   useEffect(() => {
@@ -109,6 +110,36 @@ const GamesShowContainer = (props) => {
     })
   }
 
+  const fetchEditList = (listID, formPayload) => {
+    fetch(`/api/v1/lists/${listID}`, {
+      credentials: "same-origin",
+      method: "PATCH",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status}: ${response.statusText}`
+        let error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((body) => {
+      setLists(body)
+    })
+    .catch((error) => {
+      console.error(`Error editing list: ${error.message}`)
+    })
+  }
+
   const changeListForm = (event) => {
     event.preventDefault()
     setListForm(!listForm)
@@ -119,12 +150,20 @@ const GamesShowContainer = (props) => {
     setDeletion(!deletion)
   }
 
+  const changeListEdit = (event) => {
+    event.preventDefault()
+    setEdit(!edit)
+  }
+
   let displayListDeleteButton = <button className="game-buttons" onClick={changeListDelete}>Delete Lists</button>
+
+  let displayListEditButton = <button className="game-buttons" onClick={changeListEdit}>Edit Lists</button>
 
   let displayListForm = <button className="game-buttons" onClick={changeListForm} className="game-buttons">New List Form</button>
   if (listForm) {
       displayListForm = <div><button className="game-buttons" onClick={changeListForm}>Back to Game</button><ListsNewComponent game={game} postNewList={postNewList}/></div>
       displayListDeleteButton = null
+      displayListEditButton = null
   }
 
   let listTiles = lists.map((list) => {
@@ -134,6 +173,8 @@ const GamesShowContainer = (props) => {
       list={list}
       deletion={deletion}
       deleteList={deleteList}
+      edit={edit}
+      fetchEditList={fetchEditList}
       />
     )
   })
@@ -150,6 +191,7 @@ const GamesShowContainer = (props) => {
         game={game}
         />
         {displayListForm}
+        {displayListEditButton}
         {displayListDeleteButton}
       </div>
       <div className="grid-container game-tiles text-center">
