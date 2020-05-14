@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/games/:id', to: 'homes#index'
   get '/lists/:id', to: 'homes#index'
   get '/featuredgame', to: 'homes#index'
+  get '/charts', to: 'homes#index'
 
   namespace :api do
     namespace :v1 do

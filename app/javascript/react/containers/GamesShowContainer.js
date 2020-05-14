@@ -193,6 +193,7 @@ const GamesShowContainer = (props) => {
         {displayListForm}
         {displayListEditButton}
         {displayListDeleteButton}
+        <p className="bold-game-show">Add lists to create walkthroughs, reviews, character descriptions, and more</p>
       </div>
       <div className="grid-container game-tiles text-center">
         <h2 className="underline">Lists</h2>
