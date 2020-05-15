@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :games, only: [:index, :show, :create, :destroy, :update, :feature] do
         collection { get 'featured' }
+        collection { get 'chart' }
       end
       resources :lists, only: [:show, :create, :destroy, :update]
       resources :points, only: [:create, :destroy, :update]

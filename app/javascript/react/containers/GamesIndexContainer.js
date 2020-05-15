@@ -160,11 +160,11 @@ const GamesIndexContainer = (props) => {
     setDeletion(!deletion)
   }
 
-  let displayGameForm = <button className="game-buttons" onClick={changeGameForm}>New Game Form</button>
+  let displayGameForm = <button className="game-buttons index-margin" onClick={changeGameForm}>New Game Form</button>
 
-  let displayGameEditButton = <button className="game-buttons" onClick={changeGameEdit}>Edit Games</button>
+  let displayGameEditButton = <button className="game-buttons index-margin" onClick={changeGameEdit}>Edit Games</button>
 
-  let displayGameDeleteButton = <button className="game-buttons" onClick={changeGameDelete}>Delete Games</button>
+  let displayGameDeleteButton = <button className="game-buttons index-margin" onClick={changeGameDelete}>Delete Games</button>
 
   if (gameForm || currentUser.user_name === "") {
       displayGameForm = <div><button onClick={changeGameForm} id="back-to-collection">Back to Collection</button><GamesNewComponent currentUser={currentUser} postNewGame={postNewGame}/></div>
@@ -176,15 +176,7 @@ const GamesIndexContainer = (props) => {
     displayGameForm = null
   }
 
-  let chart = <div className="chart-parent">
-  <div className="progress-chart">
-  <ChartComponent games={games} />
-  </div>
-  </div>
-  if (games.length === 0) {
-    chart = null
-  }
-  
+
   let gameTiles = games.map((game) => {
     return (
       <GamesIndexTile
@@ -198,6 +190,14 @@ const GamesIndexContainer = (props) => {
     )
   })
 
+  let chart = <div className="chart-parent">
+  <div className="progress-chart">
+  <ChartComponent games={games} gameForm={gameForm}/>
+  </div>
+  </div>
+  if (games.length === 0) {
+    chart = null
+  }
 
   return (
     <div className="grid-container" id="webpage-grid">
