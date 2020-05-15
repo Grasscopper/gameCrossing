@@ -32,7 +32,7 @@ const PointsIndexTile = (props) => {
   let editPointForm = null
   if (props.edit) {
     editPointForm = <form autoComplete="off" onSubmit={sendEditPoint}>
-      <label htmlFor="title">Title</label>
+      <label htmlFor="title">List Bullet</label>
       <input
         id="title"
         name="title"

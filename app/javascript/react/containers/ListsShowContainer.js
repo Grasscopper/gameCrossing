@@ -177,7 +177,7 @@ const ListsShowContainer = (props) => {
   })
 
   return (
-    <div className="grid-container game-tiles text-center">
+    <div className="grid-container game-tiles text-center list-show-tile">
       <Link to={`/games/${list.game.id}`}>
         <h1 className="game-title">{list.game.title}</h1>
       </Link>
