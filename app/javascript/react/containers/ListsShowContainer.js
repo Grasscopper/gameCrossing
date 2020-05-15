@@ -130,6 +130,7 @@ const ListsShowContainer = (props) => {
     })
     .then((body) => {
       setPoints(body)
+      setEdit(false)
     })
     .catch((error) => {
       console.error(`Error editing list: ${error.message}`)
