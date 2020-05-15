@@ -151,6 +151,7 @@
 
 #delete-game {
   margin: 20px;
+  border-radius: 0px;
 }
 
 #delete-game:hover {
@@ -378,11 +379,16 @@ li > a:hover {
 
 }
 
+.list-tile {
+  background-color: #f4f4ed;
+}
+
 .show-tile {
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 15px;
+  background-color: #f4f4ed;
 }
 
 .show-tile-container {
@@ -397,6 +403,7 @@ li > a:hover {
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 50px;
+  background-color: #f4f4ed;
 }
 
 .top-bar {
