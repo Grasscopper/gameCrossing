@@ -134,6 +134,7 @@ const GamesShowContainer = (props) => {
     })
     .then((body) => {
       setLists(body)
+      setEdit(false)
     })
     .catch((error) => {
       console.error(`Error editing list: ${error.message}`)
