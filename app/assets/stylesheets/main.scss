@@ -10,6 +10,10 @@
   font-weight: bold;
 }
 
+#no-border {
+  border: none;
+}
+
 .progress-clicked {
   // font-weight: 800;
   font-family: sans-serif;
@@ -172,7 +176,8 @@ ul {
 
 body {
   // background-color: #fa9191;
-  background-color: #fcfcff;
+  // background-color: #fcfcff;
+  background-color: #f4f4ed;
 }
 
 img {
@@ -329,12 +334,14 @@ a:hover {
 }
 
 #webpage-grid {
+  margin-top: 0px;
   padding: 30px;
-  border: solid;
+  padding-top: 10px;
+  // border: solid;
   border-radius: 15px;
   // background-color: #b4f2e1;
   background-color: #f4f4ed;
-  margin-top: 30px;
+  // margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -357,7 +364,8 @@ a:hover {
 }
 
 li {
-  background-color: #F4F4ED;
+  // background-color: #F4F4ED;
+  background-color: #00a896;
 }
 
 li > a {
@@ -381,10 +389,12 @@ li > a:hover {
 
 .list-tile {
   background-color: #f4f4ed;
+  border: none;
 }
 
 .show-tile {
-  margin-top: 30px;
+  margin-top: 0px;
+  // margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 15px;
@@ -392,6 +402,8 @@ li > a:hover {
 }
 
 .show-tile-container {
+  margin-top: 0px;
+  padding-top: 10px;
   padding-left: 30px;
   padding-right: 30px;
   border: 3px;
@@ -399,7 +411,9 @@ li > a:hover {
 }
 
 .list-show-tile {
-  margin-top: 30px;
+  border: none;
+  margin-top: 10px;
+  // margin-top: 0px;
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 50px;
@@ -408,7 +422,8 @@ li > a:hover {
 
 .top-bar {
   // background-color: #ffe9c5;
-  background-color: #f4f4ed;
+  // background-color: #f4f4ed; //mid white
+  background-color: #00a896;
 }
 
 #game-show-padding-top {

@@ -186,7 +186,7 @@ const GamesShowContainer = (props) => {
 
   return (
     <div className="grid-container show-tile-container">
-      <div className="game-tiles text-center show-tile">
+      <div className="game-tiles text-center show-tile" id="no-border">
         <GamesShowTile
         key={game.id}
         game={game}
