@@ -10,6 +10,11 @@
   font-weight: bold;
 }
 
+#nightsky {
+  width: 80%;
+  height: 80%;
+}
+
 #no-border {
   border: none;
 }
@@ -178,6 +183,7 @@ body {
   // background-color: #fa9191;
   // background-color: #fcfcff;
   background-color: #f4f4ed;
+  background-image: url('https://pressstart.vip/images/uploads/assets/cityskyline.png');
 }
 
 img {
