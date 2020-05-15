@@ -184,7 +184,7 @@ const GamesShowContainer = (props) => {
   }
 
   return (
-    <div className="grid-container">
+    <div className="grid-container show-tile-container">
       <div className="game-tiles text-center show-tile">
         <GamesShowTile
         key={game.id}
@@ -193,7 +193,7 @@ const GamesShowContainer = (props) => {
         {displayListForm}
         {displayListEditButton}
         {displayListDeleteButton}
-        <p className="bold-game-show">Add lists to create walkthroughs, reviews, character descriptions, and more</p>
+        <p className="bold-game-show">Write lists to create walkthroughs, reviews, character descriptions, and more</p>
       </div>
       <div className="grid-container game-tiles text-center">
         <h2 className="underline">Lists</h2>
