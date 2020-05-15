@@ -134,6 +134,7 @@ const GamesIndexContainer = (props) => {
     })
     .then((body) => {
       setGames(body)
+      setEdit(false)
     })
     .catch((error) => {
       console.error(`Error editing game: ${error.message}`)
