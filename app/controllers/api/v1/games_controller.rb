@@ -44,6 +44,14 @@ class Api::V1::GamesController < ApplicationController
     render json: key.to_json
   end
 
+  def chart
+    slices = []
+    current_user.games.each do |game|
+      slices << game.status
+    end
+    render json: slices
+  end
+
   def serialized_data(data, serializer)
    ActiveModelSerializers::SerializableResource.new(data, serializer: serializer)
   end
