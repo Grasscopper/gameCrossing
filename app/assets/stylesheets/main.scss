@@ -61,8 +61,10 @@
   padding-left: 20px;
 }
 
-.featured {
-  padding-bottom: 30px;
+#featured-id {
+  margin-top: 0px;
+  background-color: #f4f4ed;
+  border: none;
 }
 
 .featured-game {
@@ -183,7 +185,8 @@ body {
   // background-color: #fa9191;
   // background-color: #fcfcff;
   background-color: #f4f4ed;
-  background-image: url('https://pressstart.vip/images/uploads/assets/cityskyline.png');
+  // background-image: url('app/assets/images/gamecrossingbackground.png');
+  background: asset_url("gamecrossingbackground.png");
 }
 
 img {
