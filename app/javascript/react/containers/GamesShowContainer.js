@@ -195,10 +195,10 @@ const GamesShowContainer = (props) => {
         {displayListEditButton}
         {displayListDeleteButton}
         <p className="bold-game-show">Write lists to create walkthroughs, reviews, character descriptions, and more</p>
-      </div>
-      <div className="grid-container game-tiles text-center list-tile">
+        <div className="grid-container game-tiles text-center list-tile" id="list-tile-border">
         <h2 className="underline">Lists</h2>
         {listTiles}
+        </div>
       </div>
     </div>
   )
