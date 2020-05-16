@@ -37,7 +37,7 @@ const PointsIndexTile = (props) => {
         id="title"
         name="title"
         type="text"
-        className="text-center"
+        className="text-center list-bullet"
         onChange={update}
         value={formPayload.title}
       />
