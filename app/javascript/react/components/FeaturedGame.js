@@ -84,16 +84,16 @@ const FeaturedGame = (props) => {
 
   return (
     <div>
-      <div className="grid-container game-tiles text-center featured">
+      <div className="grid-container game-tiles text-center featured" id="featured-id">
         <h1>{featured.name}</h1>
         <h2>Metacritic Score: {metacritic}</h2>
         <p>{platforms}</p>
         <p>{genres}</p>
         <img src={featured.background_image} alt={featured.name} />
-      </div>
-      <div className="text-center">
-      <p>Featured game source goes to RAWG Video Games Database API --- Thank you!</p>
-      <a href="https://rawg.io/" target="_blank"><p id="rawg">https://rawg.io/</p></a>
+        <div className="text-center">
+        <p>Featured game source goes to RAWG Video Games Database API --- Thank you!</p>
+        <a href="https://rawg.io/" target="_blank"><p id="rawg">https://rawg.io/</p></a>
+        </div>
       </div>
     </div>
   )
