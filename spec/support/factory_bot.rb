@@ -16,4 +16,10 @@ FactoryBot.define do
     sequence(:progress) {|n| "progress#{n}"}
     association :user
   end
+
+  factory :list do
+    sequence(:title) {|n| "title#{n}"}
+    sequence(:image) {|n| "image#{n}"}
+    association :game
+  end
 end
