@@ -17,6 +17,7 @@
 
 #no-border {
   border: none;
+  padding-bottom: 30px;
 }
 
 .progress-clicked {
@@ -65,12 +66,18 @@
   margin-top: 0px;
   background-color: #f4f4ed;
   border: none;
+  border-radius: 0px;
+  padding-bottom: 35px;
+}
+
+#list-tile-border {
+  border-radius: 0px;
 }
 
 .daysky {
-	content:url("gamecrossingdaysky.png");
-  height: 80%;
-  width: 80%;
+  // content:url("gamecrossingdaysky.png");
+  height: 50%;
+  width: 50%;
 }
 
 .featured-game {
@@ -351,9 +358,9 @@ a:hover {
 #webpage-grid {
   margin-top: 0px;
   padding: 30px;
-  padding-top: 10px;
+  padding-top: 0px;//10px;
   // border: solid;
-  border-radius: 15px;
+  border-radius: 0px; //15
   // background-color: #b4f2e1;
   background-color: #f4f4ed;
   // margin-top: 30px;
@@ -412,13 +419,13 @@ li > a:hover {
   // margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  border-radius: 15px;
+  border-radius: 0px;//15px;
   background-color: #f4f4ed;
 }
 
 .show-tile-container {
   margin-top: 0px;
-  padding-top: 10px;
+  padding-top: 0px;//10px;
   padding-left: 30px;
   padding-right: 30px;
   border: 3px;
@@ -427,10 +434,11 @@ li > a:hover {
 
 .list-show-tile {
   border: none;
-  margin-top: 10px;
+  margin-top: 0px;//10px;
   // margin-top: 0px;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 30px;
   margin-bottom: 50px;
   background-color: #f4f4ed;
 }
