@@ -6,6 +6,9 @@ Visit us: https://gamecrossing.herokuapp.com/
 
 Author: Justin Stransky
 
+Images: https://pressstart.vip/assets
+Thank you, Waldo!
+
 APIs:
 
 https://rawg.io/
