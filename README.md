@@ -6,6 +6,9 @@ Visit us: https://gamecrossing.herokuapp.com/
 
 Author: Justin Stransky
 
+Favicon: Mega Man from Capcom
+Designed by	Akira Kitamura and Keiji Inafune
+
 Images: https://pressstart.vip/assets
 Thank you, Waldo!
 
@@ -42,4 +45,8 @@ bundle exec rake db:drop
 bundle exec rake db:create
 
 bundle exec rake db:migrate
- 
+
+* To start app
+
+In first tab, rails s
+In second tab, npm start
